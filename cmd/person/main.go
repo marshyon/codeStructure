@@ -2,9 +2,9 @@ package main
 
 import (
 	 "fmt"
-	 "github.com/marshyon/codeStructue"
-	 "github.com/marshyon/codeStructue/storage/mongo"
-	 "github.com/marshyon/codeStructue/storage/postgres"
+	 "github.com/marshyon/codeStructure"
+	 "github.com/marshyon/codeStructure/storage/mongo"
+	 "github.com/marshyon/codeStructure/storage/postgres"
 )
 
 func main() {

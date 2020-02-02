@@ -1,6 +1,6 @@
 package mongo
 
-import "github.com/marshyon/codeStructue"
+import "github.com/marshyon/codeStructure"
 
 type Db map[int]architecture.Person
 
