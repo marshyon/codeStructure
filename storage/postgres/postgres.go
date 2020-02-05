@@ -1,4 +1,4 @@
-package mongo
+package postgres
 
 import "github.com/marshyon/codeStructure"
 

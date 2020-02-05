@@ -8,8 +8,6 @@ import (
 )
 
 func main() {
-	fmt.Println("hi")
-
 	dbm := mongo.Db{}
 	dbp := postgres.Db{}
 
@@ -31,7 +29,7 @@ func main() {
 	architecture.Put(dbm, 1, p1)
 	architecture.Put(dbm, 2, p2)
 	fmt.Println(architecture.Get(dbm, 1))
-	fmt.Println(architecture.get(dbm, 2))
+	fmt.Println(architecture.Get(dbm, 2))
 
 	ps.Save(3, p3)
 	fmt.Println(ps.Get(1))

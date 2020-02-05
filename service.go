@@ -24,7 +24,7 @@ type PersonService struct {
 }
 
 func NewPersonService(a Accessor) PersonService {
-	return PersonService {
+	return PersonService{
 		a: a,
 	}
 }
