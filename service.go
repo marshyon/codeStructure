@@ -2,34 +2,26 @@ package architecture
 
 import "fmt"
 
-type Person struct {
-	First string
-}
-
+// Accessor interface is used to access and abstract storage back-ends
 type Accessor interface {
 	Save(n int, p Person)
 	Retrieve(n int) Person
 }
 
-func Get(a Accessor, n int) Person {
-	return a.Retrieve(n)
+// Person struct is the main
+// data componenent
+type Person struct {
+	First string
 }
 
-func Put(a Accessor, n int, p Person) {
-	a.Save(n, p)
-}
-
+// PersonService uses accessor interface
 type PersonService struct {
 	a Accessor
 }
 
-func NewPersonService(a Accessor) PersonService {
-	return PersonService{
-		a: a,
-	}
-}
-
-
+// Get method used to access data through
+// Person service and the Retrieve method
+// the Retrieve method is implemented by the storage backend
 func (ps PersonService) Get(n int) (Person, error) {
 	p := ps.a.Retrieve(n)
 	if p.First == "" {
@@ -38,6 +30,17 @@ func (ps PersonService) Get(n int) (Person, error) {
 	return p, nil
 }
 
+// Save method used to access data through
+// Person service and the Save method
+// the Save method is implemented by the storage backend
 func (ps PersonService) Save(n int, p Person) {
 	ps.a.Save(n, p)
+}
+
+// NewPersonService creates a new service to action
+// save and retrieve operations
+func NewPersonService(a Accessor) PersonService {
+	return PersonService{
+		a: a,
+	}
 }
